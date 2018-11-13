@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--Jack Seibert-->
+<html>
+
+<head>
+<title>Assignment 3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>Create a To-Do List!</h1>
+
+<p>Add items to your to-do list below. When you're done, click the item to remove it!</p>
+
+<form>
+  <label for="item">To-Do Item:</label>
+  <input name="item" id="item" type="text" /> 
+  <input id="add" value="Add To List" type="button" /> 
+</form>
+
+<ul id="todoList">
+</ul>
+
+<script>
+$(document).ready(function(){
+	$("#add").click(function () {           
+
+ 	var selectedVal = $('#item').val();
+
+  	$('#todoList').append('<li>'+selectedVal+'</li>');
+
+});
+
+    $("#todoList").on("click", "li", function(){ 
+    	console.log("clicked");
+        $(this).remove();
+});
+});
+</script>
+</body>
+
+</html>
